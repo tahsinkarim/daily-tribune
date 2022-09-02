@@ -1,0 +1,18 @@
+body {
+  background-color: #f6f6f6;
+}
+.iris {
+  background-color: #5d5fef;
+  color: #fff;
+}
+.item {
+  color: #858585;
+}
+.item:hover {
+  color: #5d5fef;
+  background-color: #eeefff;
+}
+.item:focus {
+  color: #5d5fef;
+  background-color: #eeefff;
+}
