@@ -16,3 +16,35 @@ body {
   color: #5d5fef;
   background-color: #eeefff;
 }
+.card-text {
+  color: #949494;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.author-img {
+  width: 40px;
+}
+#card-container .card,
+.max {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+@media (max-width: 766px) {
+  .item {
+    width: 100%;
+    background-color: #5d5fef;
+    color: white;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  main {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
