@@ -1,8 +1,13 @@
 const loadData = async () =>{
-    const url = `https://openapi.programming-hero.com/api/news/categories`
-    const res = await fetch(url)
-    const data = await res.json()
-    return displayCategories(data.data.news_category)
+    try{
+        const url = `https://openapi.programming-hero.com/api/news/categories`
+        const res = await fetch(url)
+        const data = await res.json()
+        return displayCategories(data.data.news_category)
+
+    } catch(error){
+        console.log('Error', error)
+    }
 }
 
 const displayCategories = data =>{
@@ -22,11 +27,15 @@ const getNewsCategory = async (id , name) =>{
     if(id < 10){
         id = '0' + id
     }
-    const url = `https://openapi.programming-hero.com/api/news/category/${id}`
-    const res = await fetch(url)
-    const data = await res.json()
-    
-    return displayNews(data.data, name)
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/category/${id}`
+        const res = await fetch(url)
+        const data = await res.json()
+        
+        return displayNews(data.data, name)
+    } catch (error) {
+        console.log('Error', error)
+    }
 }
 
 const displayNews = (data, name) =>{
@@ -92,10 +101,14 @@ const checkName = input => input === 'system' | input === null | input === '' ? 
 const truncate = input => input.length > 5 ? `${input.substring(0, 400)}...` : input;
 
 const loadDetails = async id =>{
-    const url = `https://openapi.programming-hero.com/api/news/${id}`
-    const res = await fetch(url)
-    const data = await res.json()
-    return displayDetails(data.data[0])
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/${id}`
+        const res = await fetch(url)
+        const data = await res.json()
+        return displayDetails(data.data[0])
+    } catch (error) {
+        console.log('Error', error)
+    }
 }
 
 const displayDetails = data =>{
