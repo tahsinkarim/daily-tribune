@@ -97,7 +97,7 @@ const displayNews = (data, name) =>{
     toggleSpinner(false)
 }
 
-const checkName = input => input === 'system' | input === null | input === '' ? "No author available" : input ;
+const checkName = input => input === null | input === '' ? "No author available" : input ;
 const truncate = input => input.length > 5 ? `${input.substring(0, 400)}...` : input;
 
 const loadDetails = async id =>{
