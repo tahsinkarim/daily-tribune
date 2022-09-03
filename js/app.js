@@ -69,14 +69,14 @@ const displayNews = (data, name) =>{
                                 <span class="mb-0 ms-3">${element.total_view === null ? "Not Available" : element.total_view}</span>
                             </div>
                             <div class="mb-3">
-                                <button 
+                                <div 
                                     type="button" 
                                     data-bs-toggle="modal"
                                     data-bs-target="#exampleModal" 
                                     onclick="loadDetails('${element._id}')" 
-                                    class="btn btn-primary"
-                                    >Details
-                                </button>
+                                    class="fs-3 iris-text"
+                                    ><i class="fa-solid fa-arrow-right"></i>
+                                </div>
                             </div>
                         </div>
                     </div>

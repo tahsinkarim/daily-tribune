@@ -5,6 +5,9 @@ body {
   background-color: #5d5fef;
   color: #fff;
 }
+.iris-text {
+  color: #5d5fef;
+}
 .item {
   color: #858585;
 }
@@ -34,12 +37,10 @@ body {
   margin: 0 auto;
 }
 #spinner {
-  height: 50vh;
+  height: 60vh;
 }
 #no-news {
-  height: 45vh;
-}
-footer {
+  height: 55vh;
 }
 @media (max-width: 766px) {
   .item {
