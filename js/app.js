@@ -10,7 +10,9 @@ const displayCategories = data =>{
     data.forEach(element =>{
         const li = document.createElement('li')
         li.innerHTML = `
-            <button onclick="getNewsCategory(${element.category_id}, '${element.category_name}')" class="btn my-1 fw-semibold item border-0">${element.category_name}</button>
+            <button onclick="getNewsCategory(${element.category_id}, '${element.category_name}')" class="btn my-1 fw-semibold item border-0">
+                ${element.category_name}
+            </button>
         `
         listContainer.appendChild(li)
     })
@@ -35,7 +37,9 @@ const displayNewsCategory = (data, name) =>{
     
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    data.forEach(element =>{
+    const sortedArray = data.sort((a,b) => (a.total_view > b.total_view) ? 1 : -1)
+    
+    sortedArray.forEach(element =>{
         const div = document.createElement('div');
         div.classList.add('card', 'my-4', 'rounded-3');
         div.innerHTML = `
@@ -47,16 +51,20 @@ const displayNewsCategory = (data, name) =>{
                     <div class="card-body">
                         <h5 class="card-title fw-bold">${element.title}</h5>
                         <p class="card-text mt-4">${truncate(element.details)}</p>
-                        <div class="card-text d-flex justify-content-between align-items-center">
-                            <div class="blog-info-container d-flex align-items-center">
+                        <div class="card-text d-flex flex-column flex-md-row justify-content-between align-items-center">
+                            <div class="blog-info-container d-flex align-items-center mb-3">
                                 <div>
                                     <p class="mb-0 fw-semibold">${checkName(element.author.name)}</p>
                                 </div>
                             </div>
-                            <div class="fw-bold">
-                                <p class="mb-0">${element.total_view === null ? "Not Available" : element.total_view}</p>
+                            <div class="fw-bold mb-3 ">
+                                <i class="fa-regular fa-eye"></i>
+                                <span class="mb-0 ms-3">${element.total_view === null ? "Not Available" : element.total_view}</span>
                             </div>
-                            <button onclick="displayDetails('${element._id}')" class="btn btn-primary">Details</button>
+                            <div class="mb-3">
+                                <button type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick="displayDetails('${element._id}')" class="btn btn-primary">Details</button>
+                            </div>
                         </div>
                     </div>
               </div>
@@ -68,7 +76,7 @@ const displayNewsCategory = (data, name) =>{
     
 }
 
-const checkName = input => input === 'system' | input === null ? "No author available" : input ;
+const checkName = input => input === 'system' | input === null | input === '' ? "No author available" : input ;
 const truncate = input => input.length > 5 ? `${input.substring(0, 400)}...` : input;
 
 const displayDetails = async id =>{
