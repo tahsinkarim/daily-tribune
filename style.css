@@ -1,5 +1,7 @@
 body {
   background-color: #f6f6f6;
+  position: relative;
+  min-height: 100vh;
 }
 .iris {
   background-color: #5d5fef;
@@ -41,6 +43,14 @@ body {
 }
 #no-news {
   height: 55vh;
+}
+.accordion {
+  height: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 @media (max-width: 766px) {
   .item {
