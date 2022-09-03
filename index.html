@@ -90,16 +90,6 @@
 
       <!--Modal Section  -->
       <section>
-        <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Launch demo modal
-        </button>
-
         <!-- Modal -->
         <div
           class="modal fade"
@@ -111,7 +101,6 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Modal title</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -119,7 +108,7 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body" id="modal-body">...</div>
+              <div class="modal-body" id="modal-body"></div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -133,8 +122,21 @@
           </div>
         </div>
       </section>
+      <!-- Spinner Utility -->
+      <section class="d-none" id="spinner">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+      <section id="no-news" class="d-none">
+        <p class="text-center fs-4 fw-semibold text-muted my-5">
+          No News Found for this category
+        </p>
+      </section>
     </main>
-    <footer class="mt-5 py-4 bg-white shadow-sm">
+    <footer class="mt-5 py-4 bg-white">
       <p class="mb-0 text-center text-secondary fw-semibold">
         Copyright 2022 Daily Tribune
       </p>

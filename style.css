@@ -33,6 +33,14 @@ body {
   max-width: 1140px;
   margin: 0 auto;
 }
+#spinner {
+  height: 50vh;
+}
+#no-news {
+  height: 45vh;
+}
+footer {
+}
 @media (max-width: 766px) {
   .item {
     width: 100%;
